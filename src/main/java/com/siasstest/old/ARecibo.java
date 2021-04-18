@@ -10,13 +10,15 @@ package com.siasstest.old;
  * @author borisgr04
  */
 public class ARecibo {
+    
     private String tipo;
     private String idDoc;
     private String fechaRecibido;
-    
+    private int i;
     private SolicitudesSDO  doc;
 
     public SolicitudesSDO getDoc() {
+        int i=0;
         return doc;
     }
 
