@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/bya/jquery_ext.js" type="text/javascript"></script>
+        
+        <script>
+            $(document).ready(function () {
+                var getSolicitudes = function () {
+                    var Solicitudes = [
+                        {NOM_EST: 'Por Recibir', COD_EST: '01', CANT: 10},
+                        {NOM_EST: 'Por Auditar', COD_EST: '02', CANT: 10},
+                        {NOM_EST: 'En Auditoria', COD_EST: '03', CANT: 10},
+                        {NOM_EST: 'Autorización', COD_EST: '04', CANT: 10},
+                        {NOM_EST: 'Negación', COD_EST: '05', CANT: 10}
+                    ];
+                    return Solicitudes;
+                }
+                var _createGridCon = function () {
+                    var estado = lstEstado.getSeleccionado();
+                    $("#Grid").html("Estado:" + estado);
+                    alert(estado);
+                    
+                    $stock = $("#stock").val();    
+                    $.ajax({
+                        url: 'svSolicitudes',
+                        dataType: 'json',
+                        data: {stock: $stock},
+                        type: 'get',
+                        cache: false,
+                        success: function (response)
+                        {
+                            var infoHTML = '';
+                            $.each(response, function (stock, stockInfo)
+                            {
+                                infoHTML += '<p>Symbol: ' + stock + "   Company: " + stockInfo.name + '   Price: ' + stockInfo.price + '</p>';
+                            })
+                            $("#stockReport").html(infoHTML);
+                        },
+                        error: function (request, textStatus, errorThrown)
+                        {
+                            alert("error:" + textStatus);
+                        },
+                        complete: function (request, textStatus)
+                        {
+                            alert("complete" + request.responseText);
+                            alert("complete" + textStatus);
+                        }
+                    });
+                }
+
+                var config = {
+                    Id: '#dvdEstado',
+                    ClassItem: 'lstestsol',
+                    Source: getSolicitudes(),
+                    fn_callback: _createGridCon,
+                    Display: 'NOM_EST',
+                    Value: 'COD_EST',
+                    Count: 'CANT'
+                };
+                lstEstado = new byaLista();
+                lstEstado.init(config);
+            });
+        </script>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>EPS.SIASS.CO</h1>
+
+            <div class="row">
+                <div class="col-lg-2">
+                    <ul class="list-group" id="dvdEstado">
+
+                    </ul>
+                </div>
+                <div class="col-lg-10" id="Grid">
+
+                </div>
+            </div>
+        </div>
+        <input id="stock" name="stock" size="40" type="text" />
+        <input id="getStockPrice" name="getStockPrice" type="button" value="Get Stock Price" />
+        <div id="stockReport" class="outputTextArea"></div>
+    </body>
+</html>

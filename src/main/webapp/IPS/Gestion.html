@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>IPS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="../js/libs/jquery/jquery.js" type="text/javascript"></script>        
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../js/bya/jquery_ext.js" type="text/javascript"></script>
+        <script src="../js/bya/bya_Page.js" type="text/javascript"></script>
+        <script src="js/gestion.js" type="text/javascript"></script>      
+
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">              
+              <a class="navbar-brand" href="#">IPS.SIASS.CO</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">   
+                  <li class="active"><a href="#">Gestión</a></li>
+                  <li><a href="ipss.inbox.html">Nueva Solicitud</a></li>
+                  <li><a href="#" id="btnSalir">Salir</a></li>             
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container">    
+            <br /><br /><br /><br />
+            <div class="row">
+                <div class="col-lg-12 text-center"><h3>GESTIÓN</h3></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2">
+                    <ul class="list-group" id="dvdEstado">
+
+                    </ul>
+                </div>
+                <div class="col-lg-10" id="Grid">
+                    <table class="table table-bordered table-hover table-striped tablesorter" id="tblDocumentos">
+                        <thead>
+                            <tr>
+                                <th>&nbsp<i class="fa fa-sort"></i></th>
+                                <th>EPS <i class="fa fa-sort"></i></th>
+                                <th>Paciente <i class="fa fa-sort"></i></th>
+                                <th>Ubicación <i class="fa fa-sort"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalDetalleSolicitud" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="H8">Detalles Solicitud</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="dvdTrazabilidadSOL"></div>
+                        <div id="dvdDetallesSolicitud"></div>
+                        <hr />
+                        <h4>CUPS</h4>
+                        <table class="table table-bordered table-hover table-striped tablesorter">
+                                <thead>
+                                    <tr>
+                                        <th>No. <i class="fa fa-sort"></i></th>
+                                        <th>CUPS<i class="fa fa-sort"></i></th>
+                                        <th>Cantidad <i class="fa fa-sort"></i></th>
+                                        <th>Descripciión <i class="fa fa-sort"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblCups">                                    
+                                </tbody>
+                            </table>
+                        <hr />
+                        <h4>CIE10</h4>
+                        <table class="table table-bordered table-hover table-striped tablesorter">
+                                <thead>
+                                    <tr>
+                                        <th>No. <i class="fa fa-sort"></i></th>
+                                        <th>CIE10<i class="fa fa-sort"></i></th>
+                                        <th>Diagnostico <i class="fa fa-sort"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblCIE10">                                    
+                                </tbody>
+                            </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalSolicitudAr" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="H1">Detalles Acuse Recibo Solicitud</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="dvdTrazabilidadARSOL"></div>
+                        <div id="dvdDetSoliAR"></div>
+                        <hr />
+                        <h4>CUPS</h4>
+                        <table class="table table-bordered table-hover table-striped tablesorter">
+                                <thead>
+                                    <tr>
+                                        <th>No. <i class="fa fa-sort"></i></th>
+                                        <th>CUPS<i class="fa fa-sort"></i></th>
+                                        <th>Cantidad <i class="fa fa-sort"></i></th>
+                                        <th>Descripciión <i class="fa fa-sort"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblCupsAR">                                    
+                                </tbody>
+                            </table>
+                        <hr />
+                        <h4>CIE10</h4>
+                        <table class="table table-bordered table-hover table-striped tablesorter">
+                                <thead>
+                                    <tr>
+                                        <th>No. <i class="fa fa-sort"></i></th>
+                                        <th>CIE10<i class="fa fa-sort"></i></th>
+                                        <th>Diagnostico <i class="fa fa-sort"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblCIE10AR">                                    
+                                </tbody>
+                            </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalDetallesAutorizacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="H1">Detalles Autorización</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="dvdTrazabilidadAUT"></div>
+                        <div id="dvdDetSoliAut"></div>
+                        <hr />
+                        <h4>CUPS</h4>
+                        <table class="table table-bordered table-hover table-striped tablesorter">
+                                <thead>
+                                    <tr>
+                                        <th>No. <i class="fa fa-sort"></i></th>
+                                        <th>CUPS<i class="fa fa-sort"></i></th>
+                                        <th>Cantidad <i class="fa fa-sort"></i></th>
+                                        <th>Descripciión <i class="fa fa-sort"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblCupsAut">                                    
+                                </tbody>
+                            </table>                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btnIrAcuseReciboAutorizacion" class="btn btn-default" data-dismiss="modal">Ir Acuse Recibo Autorización</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalDetallesArAutorizacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="H1">Detalles Autorización</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="dvdTrazabilidadARAUT"></div>
+                        <div id="dvdDetSoliArAut"></div>
+                        <hr />
+                        <h4>CUPS</h4>
+                        <table class="table table-bordered table-hover table-striped tablesorter">
+                                <thead>
+                                    <tr>
+                                        <th>No. <i class="fa fa-sort"></i></th>
+                                        <th>CUPS<i class="fa fa-sort"></i></th>
+                                        <th>Cantidad <i class="fa fa-sort"></i></th>
+                                        <th>Descripciión <i class="fa fa-sort"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblCupsArAut">                                    
+                                </tbody>
+                            </table>                        
+                    </div>
+                    <div class="modal-footer">                        
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="modalDetallesNegacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="H1">Detalles Negación</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="dvdTrazabilidadNEG"></div>
+                        <div id="dvdDetSoliNeg"></div>
+                        <hr />
+                        <h4>CUPS</h4>
+                        <table class="table table-bordered table-hover table-striped tablesorter">
+                                <thead>
+                                    <tr>
+                                        <th>No. <i class="fa fa-sort"></i></th>
+                                        <th>CUPS<i class="fa fa-sort"></i></th>
+                                        <th>Cantidad <i class="fa fa-sort"></i></th>
+                                        <th>Descripciión <i class="fa fa-sort"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblCupsNeg">                                    
+                                </tbody>
+                            </table>                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btnIrAcuseReciboNegacion" class="btn btn-default" data-dismiss="modal">Ir Acuse Recibo Negación</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="modalDetallesArNegacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="H1">Detalles Negación</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="dvdTrazabilidadARNEG"></div>
+                        <div id="dvdDetSoliArNeg"></div>
+                        <hr />
+                        <h4>CUPS</h4>
+                        <table class="table table-bordered table-hover table-striped tablesorter">
+                                <thead>
+                                    <tr>
+                                        <th>No. <i class="fa fa-sort"></i></th>
+                                        <th>CUPS<i class="fa fa-sort"></i></th>
+                                        <th>Cantidad <i class="fa fa-sort"></i></th>
+                                        <th>Descripciión <i class="fa fa-sort"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblCupsArNeg">                                    
+                                </tbody>
+                            </table>                        
+                    </div>
+                    <div class="modal-footer">                        
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
