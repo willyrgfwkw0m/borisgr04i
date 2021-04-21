@@ -18,7 +18,6 @@ public class ARecibo {
     private SolicitudesSDO  doc;
 
     public SolicitudesSDO getDoc() {
-        int i=0;
         return doc;
     }
 
