@@ -21,6 +21,8 @@ var manejador = (function () {
             success: function (result) {
                 lIPS = result;
                 $("#cboIPS").byaCombo({ DataSource: lIPS, Value: "Codigo", Display: "Nombre" });
+                
+                $("#cboIPS").val("IPS03");
             },
             error: function (request, textStatus, errorThrown) {
                 alert("error:" + textStatus + errorThrown);

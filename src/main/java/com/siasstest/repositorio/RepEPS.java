@@ -23,7 +23,7 @@ public class RepEPS {
     }
     
     private RepEPS() {
-        add(new EPS("EPS01","EPS 1","http://localhost:9090/hapi-fhir-eps/fhir/"));
+        add(new EPS("EPS01","EPS 1","http://190.109.185.138:9091/hapi-fhir-eps/fhir/"));
     }
     public void add(EPS o){
         Org.put(o.getCodigo(),o);

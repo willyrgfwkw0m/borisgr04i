@@ -84,7 +84,7 @@ var manejador = (function () {
             },
             error: function (request, textStatus, errorThrown)
             {
-                alert("error:" + textStatus+errorThrown);
+                alert("error:" + textStatus + errorThrown);
             },
             complete: function (request, textStatus)
             {
@@ -149,7 +149,7 @@ var manejador = (function () {
             contentType: 'application/json',
             success: function (result) {
                 lCUPS = result;
-                $("#cboCUPS").byaCombo({ DataSource: lCUPS, Value: "Codigo", Display: "Nombre" });
+                $("#cboCUPS").byaCombo({ DataSource: lCUPS, Value: "Codigo", Display: "Codigo" });
             },
             error: function (request, textStatus, errorThrown) {
                 alert("error:" + textStatus + errorThrown);
@@ -170,7 +170,7 @@ var manejador = (function () {
             contentType: 'application/json',
             success: function (result) {
                 lCIE10 = result;
-                $("#cboCIE10").byaCombo({ DataSource: lCIE10, Value: "Codigo", Display: "Nombre" });
+                $("#cboCIE10").byaCombo({ DataSource: lCIE10, Value: "Codigo", Display: "Codigo" });
             },
             error: function (request, textStatus, errorThrown) {
                 alert("error:" + textStatus + errorThrown);
@@ -228,7 +228,7 @@ var manejador = (function () {
         $("#tblCups").html("");
         $.each(lServiciosCUPS, function (index, item) {
             var i = index + 1;
-            $("#tblCups").append("<tr><th scope='row'>" + i + "</th><td>" + item.Nom_CodigoCUPS + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCups").append("<tr><th scope='row'>" + i + "</th><td>" + item.CodigoCUPS + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
         });
     };
 
@@ -249,7 +249,7 @@ var manejador = (function () {
         $("#tblCIE10").html("");
         $.each(lDiagnosticoCIE10, function (index, item) {
             var i = index + 1;
-            $("#tblCIE10").append("<tr><th scope='row'>" + i + "</th><td>" + item.Nom_Codigo + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCIE10").append("<tr><th scope='row'>" + i + "</th><td>" + item.Codigo + "</td><td>" + item.Descripcion + "</td></tr>");
         });
     };
 

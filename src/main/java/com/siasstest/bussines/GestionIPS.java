@@ -57,7 +57,7 @@ public class GestionIPS {
         sol.setPaciente(RepPacientes.getInstance().get(sol.getPac_ide()));
         sol.setAcuseRecibo((AcuseRecibo) RepDocumentos.getInstance().get(sol.getIdAcuseRecibo()));
         RepDocumentos.getInstance().add(sol);
-        ByAFhirClientSolicitud fhir= new ByAFhirClientSolicitud();
+        ByAFhirClientSolicitud fhir= new ByAFhirClientSolicitud(sol.getEps().getEndPoint());
         String Respuesta = fhir.Enviar(sol);
         return sol.getIdDocumento()+ " Resultado Remoto:"+Respuesta;// + Remoto+" Remoto A" +RemotoA;
     }

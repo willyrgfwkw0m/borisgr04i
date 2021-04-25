@@ -17,7 +17,7 @@ var manejador = (function () {
         });
     };
     var _createElements = function () {
-        localStorage.setItem("appPacDirSer", "/");
+        localStorage.setItem("appPacDirSer", "http://190.109.185.138:9091/");
         _traerSolicitudesPaciente();
     };
     var _abriModalDetalles = function()    {

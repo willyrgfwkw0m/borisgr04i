@@ -16,7 +16,12 @@ import com.siasstest.sdo.Solicitud;
  */
 public class ByAFhirClientSolicitud {
     
-    String serverBaseUrl = "http://localhost:9090/hapi-fhir-eps/fhir/";
+    String serverBaseUrl; // = "http://190.109.185.138:9091/hapi-fhir-eps/fhir/";
+
+    public ByAFhirClientSolicitud(String serverBaseUrl) {
+        this.serverBaseUrl = serverBaseUrl;
+    }
+    
     public String Enviar(Solicitud sol){
         SolicitudMapper sm = new  SolicitudMapper();
         SolicitudCommunication c= sm.Mapper(sol);

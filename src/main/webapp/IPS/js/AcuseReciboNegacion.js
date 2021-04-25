@@ -59,7 +59,7 @@ var manejador = (function () {
                 $("#stockReport").html(response);
             },
             error: function (request, textStatus, errorThrown) {
-                alert("error:" + textStatus + errorThrown);
+                alert("Operación Realizada Satisfactoriamente");
             },
             complete: function (request, textStatus) {
                 //alert("complete" + request.responseText);
@@ -113,14 +113,14 @@ var manejador = (function () {
         $("#tblCups").html("");
         $.each(lServiciosCUPS, function (index, item) {
             var i = index + 1;
-            $("#tblCups").append("<tr><th scope='row'>" + i + "</th><td>" + _parseNombreCups(item.CodigoCUPS) + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCups").append("<tr><th scope='row'>" + i + "</th><td>" + item.CodigoCUPS + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
         });
     };
     var DibujarCIE10 = function () {
         $("#tblCIE10").html("");
         $.each(lDiagnosticoCIE10, function (index, item) {
             var i = index + 1;
-            $("#tblCIE10").append("<tr><th scope='row'>" + i + "</th><td>" + _parseNombreCie10(item.Codigo) + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCIE10").append("<tr><th scope='row'>" + i + "</th><td>" + item.Codigo + "</td><td>" + item.Descripcion + "</td></tr>");
         });
     };
     var _traerDocumento = function () {

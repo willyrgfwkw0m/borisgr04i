@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>EPS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="../js/libs/jquery/jquery.js" type="text/javascript"></script>        
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../js/bya/jquery_ext.js" type="text/javascript"></script>
+        <script src="../js/bya/bya_Page.js" type="text/javascript"></script>
+        <script src="js/Consultas.js" type="text/javascript"></script>      
+
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">              
+              <a class="navbar-brand" href="#">EPS.SIASS.CO</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">   
+                  <li><a href="Gestion.html">Gestión</a></li>
+                  <li class="active"><a href="#">Consultas</a></li>
+                  <li><a href="#" id="btnSalir">Salir</a></li>             
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container">    
+            <br /><br /><br /><br />
+            <div class="row">
+                <div class="col-lg-12 text-center"><h3>CONSULTAS</h3></div>
+            </div>
+            <div class="row">
+                <div class="form-horizontal">
+                     <div class="tabbable tabs-left">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tabPacientes" data-toggle="tab">1. Paciente</a></li>
+                            <li><a href="#tabIPS" data-toggle="tab">2. IPS</a></li>
+                            <li><a href="#tabCUPS" data-toggle="tab">3. CUPS</a></li>
+                            <li><a href="#tabCIE10" data-toggle="tab">2. CIE10</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tabPacientes" class="tab-pane in active" style="margin:25px">
+                                <div class="row form-group">
+                                    <div class="col-lg-2 text-right">
+                                        <label>Documento</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <input type="text" class="form-control" id="txtDocumentoPaciente" value="1065649117" />
+                                    </div>
+                                    <div class="col-lg-2 text-right">
+                                        <label>Nombre:</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label id="txtNombrePaciente">JUAN CARLOS MEJIA LOPEZ</label>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <table class="table table-bordered table-hover table-striped tablesorter" id="Table1">
+                                        <thead>
+                                            <tr>
+                                                <th>&nbsp<i class="fa fa-sort"></i></th>
+                                                <th>IPS <i class="fa fa-sort"></i></th>
+                                                <th>Ubicación <i class="fa fa-sort"></i></th>
+                                                <th>Estado <i class="fa fa-sort"></i></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>    
+                                            <tr>
+                                                <td><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></td>
+                                                <td>CLINICA MEDIANA Y ALTA COMPLEJIDAD <i class="fa fa-sort"></i></td>
+                                                <td>Hospitalizacion <i class="fa fa-sort"></i></td>
+                                                <td>Solicitud <i class="fa fa-sort"></i></td>
+                                            </tr>  
+                                            <tr>
+                                                <td><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></td>
+                                                <td>CLINICA MEDIANA Y ALTA COMPLEJIDAD <i class="fa fa-sort"></i></td>
+                                                <td>Urgencias <i class="fa fa-sort"></i></td>
+                                                <td>Autorizacion <i class="fa fa-sort"></i></td>
+                                            </tr>                    
+                                        </tbody>
+                                    </table>
+                                </div>
+                             </div>
+                            <div id="tabIPS" class="tab-pane in" style="margin:25px">
+                                <div class="row form-group">
+                                    <div class="col-lg-2 text-right">
+                                        <label>IPS</label>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <select class="form-control" id="cboIPS">
+                                            <option value="IPS03" selected="selected">CLINICA MEDIANA Y ALTA COMPLEJIDAD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <table class="table table-bordered table-hover table-striped tablesorter" id="Table2">
+                                        <thead>
+                                            <tr>
+                                                <th>&nbsp<i class="fa fa-sort"></i></th>
+                                                <th>Paicente <i class="fa fa-sort"></i></th>
+                                                <th>Ubicación <i class="fa fa-sort"></i></th>
+                                                <th>Estado <i class="fa fa-sort"></i></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>    
+                                            <tr>
+                                                <td><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></td>
+                                                <td>JUAN CARLOS MEJIA LOPEZ <i class="fa fa-sort"></i></td>
+                                                <td>Hospitalización <i class="fa fa-sort"></i></td>
+                                                <td>Solicitud <i class="fa fa-sort"></i></td>
+                                            </tr>  
+                                            <tr>
+                                                <td><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></td>
+                                                <td>JUAN CARLOS MEJIA LOPEZ <i class="fa fa-sort"></i></td>
+                                                <td>Urgencias <i class="fa fa-sort"></i></td>
+                                                <td>Autorización <i class="fa fa-sort"></i></td>
+                                            </tr>   
+                                            <tr>
+                                                <td><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></td>
+                                                <td>KEVIN SEBASTIAN ARIAS RIPOLL <i class="fa fa-sort"></i></td>
+                                                <td>Urgencias <i class="fa fa-sort"></i></td>
+                                                <td>Autorizacion <i class="fa fa-sort"></i></td>
+                                            </tr>  
+                                            <tr>
+                                                <td><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></td>
+                                                <td>MARIA CAMILA LOPEZ MUNERA <i class="fa fa-sort"></i></td>
+                                                <td>Urgencias <i class="fa fa-sort"></i></td>
+                                                <td>Autorizacion <i class="fa fa-sort"></i></td>
+                                            </tr>                    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="tabCUPS" class="tab-pane in" style="margin:25px">
+                                <div class="row form-group">
+                                    <div class="col-lg-2 text-right">
+                                        <label>Codigo</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <select class="form-control" id="Select1">
+                                            <option value="010901" selected="selected">010901</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2 text-right">
+                                        <label>Descripción:</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label id="Label1">PUNCION SUBDURAL</label>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <table class="table table-bordered table-hover table-striped tablesorter" id="Table3">
+                                        <thead>
+                                            <tr>
+                                                <th>&nbsp<i class="fa fa-sort"></i></th>
+                                                <th>Paicente <i class="fa fa-sort"></i></th>
+                                                <th>IPS <i class="fa fa-sort"></i></th>
+                                                <th>Ubicación <i class="fa fa-sort"></i></th>
+                                                <th>Estado <i class="fa fa-sort"></i></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>    
+                                            <tr>
+                                                <td><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></td>
+                                                <td>JUAN CARLOS MEJIA LOPEZ <i class="fa fa-sort"></i></td>
+                                                <td>CLINICA MEDIANA Y ALTA COMPLEJIDAD <i class="fa fa-sort"></i></td>
+                                                <td>Hospitalizacion <i class="fa fa-sort"></i></td>
+                                                <td>Solicitud <i class="fa fa-sort"></i></td>
+                                            </tr>  
+                                            <tr>
+                                                <td><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></td>
+                                                <td>KEVIN SEBASTIAN ARIAS RIPOLL <i class="fa fa-sort"></i></td>
+                                                <td>CLINICA MEDIANA Y ALTA COMPLEJIDAD <i class="fa fa-sort"></i></td>
+                                                <td>Urgencias <i class="fa fa-sort"></i></td>
+                                                <td>Autorizacion <i class="fa fa-sort"></i></td>
+                                            </tr>  
+                                            <tr>
+                                                <td><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></td>
+                                                <td>MARIA CAMILA LOPEZ MUNERA <i class="fa fa-sort"></i></td>
+                                                <td>CLINICA MEDIANA Y ALTA COMPLEJIDAD <i class="fa fa-sort"></i></td>
+                                                <td>Urgencias <i class="fa fa-sort"></i></td>
+                                                <td>Autorizacion <i class="fa fa-sort"></i></td>
+                                            </tr>                    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="tabCIE10" class="tab-pane in" style="margin:25px">
+                                <div class="row form-group">
+                                    <div class="col-lg-2 text-right">
+                                        <label>Codigo</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <select class="form-control" id="Select3">
+                                            <option value="A06.7" selected="selected">A06.7</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2 text-right">
+                                        <label>Diagnostico:</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label id="Label2">AMEBIASIS CUTANEA</label>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <table class="table table-bordered table-hover table-striped tablesorter" id="Table4">
+                                        <thead>
+                                            <tr>
+                                                <th>&nbsp<i class="fa fa-sort"></i></th>
+                                                <th>Paicente <i class="fa fa-sort"></i></th>
+                                                <th>IPS <i class="fa fa-sort"></i></th>
+                                                <th>Ubicación <i class="fa fa-sort"></i></th>
+                                                <th>Estado <i class="fa fa-sort"></i></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>    
+                                            <tr>
+                                                <td><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></td>
+                                                <td>JUAN CARLOS MEJIA LOPEZ <i class="fa fa-sort"></i></td>
+                                                <td>CLINICA MEDIANA Y ALTA COMPLEJIDAD <i class="fa fa-sort"></i></td>
+                                                <td>Hospitalizacion <i class="fa fa-sort"></i></td>
+                                                <td>Solicitud <i class="fa fa-sort"></i></td>
+                                            </tr>  
+                                            <tr>
+                                                <td><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></td>
+                                                <td>KEVIN SEBASTIAN ARIAS RIPOLL <i class="fa fa-sort"></i></td>
+                                                <td>CLINICA MEDIANA Y ALTA COMPLEJIDAD <i class="fa fa-sort"></i></td>
+                                                <td>Urgencias <i class="fa fa-sort"></i></td>
+                                                <td>Autorizacion <i class="fa fa-sort"></i></td>
+                                            </tr>  
+                                            <tr>
+                                                <td><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></td>
+                                                <td>MARIA CAMILA LOPEZ MUNERA <i class="fa fa-sort"></i></td>
+                                                <td>CLINICA MEDIANA Y ALTA COMPLEJIDAD <i class="fa fa-sort"></i></td>
+                                                <td>Urgencias <i class="fa fa-sort"></i></td>
+                                                <td>Autorizacion <i class="fa fa-sort"></i></td>
+                                            </tr>                     
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

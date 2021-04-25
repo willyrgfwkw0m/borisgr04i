@@ -11,12 +11,12 @@ var manejador = (function () {
         _traerIps();
     };
     var _traerIps = function () {
-        lIPS = [
-            { "Codigo": "EPS01", "Nombre": "EPS 01" },
-            { "Codigo": "EPS02", "Nombre": "EPS 02"},
-            { "Codigo": "EPS03", "Nombre": "EPS 03"}
-        ];
-        $("#cboEPS").byaCombo({ DataSource: lIPS, Value: "Codigo", Display: "Nombre" });
+//        lIPS = [
+//            { "Codigo": "EPS01", "Nombre": "EPS 01" },
+//            { "Codigo": "EPS02", "Nombre": "EPS 02"},
+//            { "Codigo": "EPS03", "Nombre": "EPS 03"}
+//        ];
+//        $("#cboEPS").byaCombo({ DataSource: lIPS, Value: "Codigo", Display: "Nombre" });
     };
     var _login = function (){
         localStorage.setItem("eps_idd", $("#cboEPS").val());

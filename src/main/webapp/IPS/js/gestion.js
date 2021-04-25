@@ -186,13 +186,13 @@ var manejador = (function () {
         $("#tblCups").html("");
         $.each(item.lServiciosCUPS, function (index, item) {
             var i = index + 1;
-            $("#tblCups").append("<tr><th scope='row'>" + i + "</th><td>" + _parseNombreCups(item.CodigoCUPS) + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCups").append("<tr><th scope='row'>" + i + "</th><td>" + item.CodigoCUPS + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
         });
 
         $("#tblCIE10").html("");
         $.each(item.lDiagnosticoCIE10, function (index, item) {
             var i = index + 1;
-            $("#tblCIE10").append("<tr><th scope='row'>" + i + "</th><td>" + _parseNombreCie10(item.Codigo) + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCIE10").append("<tr><th scope='row'>" + i + "</th><td>" + item.Codigo + "</td><td>" + item.Descripcion + "</td></tr>");
         });
         $("#modalDetalleSolicitud").modal("show");
     };
@@ -228,13 +228,13 @@ var manejador = (function () {
         $("#tblCupsAR").html("");
         $.each(item.lServiciosCUPS, function (index, item) {
             var i = index + 1;
-            $("#tblCupsAR").append("<tr><th scope='row'>" + i + "</th><td>" + _parseNombreCups(item.CodigoCUPS) + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCupsAR").append("<tr><th scope='row'>" + i + "</th><td>" + item.CodigoCUPS + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
         });
 
         $("#tblCIE10AR").html("");
         $.each(item.lDiagnosticoCIE10, function (index, item) {
             var i = index + 1;
-            $("#tblCIE10AR").append("<tr><th scope='row'>" + i + "</th><td>" + _parseNombreCie10(item.Codigo) + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCIE10AR").append("<tr><th scope='row'>" + i + "</th><td>" + item.Codigo + "</td><td>" + item.Descripcion + "</td></tr>");
         });
         $("#modalSolicitudAr").modal("show");
     };
@@ -276,7 +276,7 @@ var manejador = (function () {
         $("#tblCupsAut").html("");
         $.each(item.lServiciosCUPS, function (index, item) {
             var i = index + 1;
-            $("#tblCupsAut").append("<tr><th scope='row'>" + i + "</th><td>" + _parseNombreCups(item.CodigoCUPS) + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCupsAut").append("<tr><th scope='row'>" + i + "</th><td>" + item.CodigoCUPS + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
         });
         $("#modalDetallesAutorizacion").modal("show");
     };
@@ -320,7 +320,7 @@ var manejador = (function () {
         $("#tblCupsArAut").html("");
         $.each(item.lServiciosCUPS, function (index, item) {
             var i = index + 1;
-            $("#tblCupsArAut").append("<tr><th scope='row'>" + i + "</th><td>" + _parseNombreCups(item.CodigoCUPS) + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCupsArAut").append("<tr><th scope='row'>" + i + "</th><td>" + item.CodigoCUPS + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
         });
         $("#modalDetallesArAutorizacion").modal("show");
     };
@@ -362,7 +362,7 @@ var manejador = (function () {
         $("#tblCupsNeg").html("");
         $.each(item.lServiciosCUPS, function (index, item) {
             var i = index + 1;
-            $("#tblCupsNeg").append("<tr><th scope='row'>" + i + "</th><td>" + _parseNombreCups(item.CodigoCUPS) + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCupsNeg").append("<tr><th scope='row'>" + i + "</th><td>" + item.CodigoCUPS + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
         });
         $("#modalDetallesNegacion").modal("show");
     };
@@ -404,7 +404,7 @@ var manejador = (function () {
         $("#tblCupsArNeg").html("");
         $.each(item.lServiciosCUPS, function (index, item) {
             var i = index + 1;
-            $("#tblCupsArNeg").append("<tr><th scope='row'>" + i + "</th><td>" + _parseNombreCups(item.CodigoCUPS) + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCupsArNeg").append("<tr><th scope='row'>" + i + "</th><td>" + item.CodigoCUPS + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td></tr>");
         });
         $("#modalDetallesArNegacion").modal("show");
     };

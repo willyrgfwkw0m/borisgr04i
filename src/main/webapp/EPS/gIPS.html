@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>EPS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="../js/libs/jquery/jquery.js" type="text/javascript"></script>        
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../js/bya/jquery_ext.js" type="text/javascript"></script>
+        <script src="../js/bya/bya_Page.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">              
+              <a class="navbar-brand" href="#">EPS.SIASS.CO</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">   
+                  <li><a href="#">Gestión</a></li>
+                  <li><a href="Consultas.html">Consultas</a></li>
+                  <li class="active"><a href="#">Gestión IPS</a></li>
+                  <li><a href="#" id="btnSalir">Salir</a></li>             
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container">    
+            <br /><br /><br /><br />
+            <div class="row">
+                <div class="col-lg-12 text-center"><h3>GESTIÓN DE IPS</h3></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                <nav class="navbar navbar-inverse">
+                      <div class="container-fluid">
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="Div1">
+                          <ul class="nav navbar-nav">
+                            <li><a class="page-scroll" href="#PublicarOferta">Nueva<span class="sr-only">(current)</span></a></li>
+                            <li><a id="btnEditarOferta">Editar</a></li>
+                            <li><a id="btnEliminarOferta">Eliminar</a></li>                            
+                          </ul>
+                        </div><!-- /.navbar-collapse -->
+                      </div><!-- /.container-fluid -->
+                    </nav>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10" id="Grid">
+                    <table class="table table-bordered table-hover table-striped tablesorter" id="tblDocumentos">
+                        <thead>
+                            <tr>
+                                <th>&nbsp<i class="fa fa-sort"></i></th>
+                                <th>Codigo <i class="fa fa-sort"></i></th>
+                                <th>Nombre <i class="fa fa-sort"></i></th>
+                                <th>Telefono <i class="fa fa-sort"></i></th>
+                                <th>Direccion <i class="fa fa-sort"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>  
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#modalRegistroIPS"><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></a></td>
+                                <td>IPS01</td>
+                                <td>HOSPITAL PRIMER NIVEL</td>
+                                <td>0912348694</td>
+                                <td>Calle 54 No. 23-54</td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#modalRegistroIPS"><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></a></td>
+                                <td>IPS02</td>
+                                <td>LABORATORIO CLÍNICO</td>
+                                <td>091573993</td>
+                                <td>Calle 23 No. 23-21</td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#modalRegistroIPS"><span class="glyphicon glyphicon-search" aria-hidden="true" style="text-align:center"/></a></td>
+                                <td>IPS03</td>
+                                <td>CLINICA MEDIANA Y ALTA COMPLEJIDAD</td>
+                                <td>0916489294</td>
+                                <td>Calle 10 No. 54-109</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalRegistroIPS" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="H8">Registro IPS</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-3 text-right">
+                                <strong>Codigo: </strong>
+                            </div>
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="txtPlacabus" value="IPS03" /><br />
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 text-right">
+                                <strong>Nombre: </strong>
+                            </div>
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="Text1" value="CLINICA MEDIANA Y ALTA COMPLEJIDAD" /><br />
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 text-right">
+                                <strong>Telefono: </strong>
+                            </div>
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="Text2" value="0916489294" /><br />
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 text-right">
+                                <strong>Dirección: </strong>
+                            </div>
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="Text3" value="Calle 10 No. 54-109" /><br />
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="btnIrAcuseReciboSolicitud">Guardar</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

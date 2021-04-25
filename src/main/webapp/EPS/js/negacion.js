@@ -132,14 +132,14 @@ var manejador = (function () {
         $("#tblCups").html("");
         $.each(lServiciosCUPS, function (index, item) {
             var i = index + 1;
-            $("#tblCups").append("<tr><th scope='row'>" + i + "</th><td>" + _parseNombreCups(item.CodigoCUPS) + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td><td><span class='glyphicon glyphicon-edit clsstblCdpEdit' id='" + index + "' onclick='manejador.AgregarDetalleCups(id)' aria-hidden='true' style='text-align:center'></span></td></tr>");
+            $("#tblCups").append("<tr><th scope='row'>" + i + "</th><td>" + item.CodigoCUPS + "</td><td>" + item.Cantidad + "</td><td>" + item.Descripcion + "</td><td><span class='glyphicon glyphicon-edit clsstblCdpEdit' id='" + index + "' onclick='manejador.AgregarDetalleCups(id)' aria-hidden='true' style='text-align:center'></span></td></tr>");
         });
     };
     var DibujarCIE10 = function () {
         $("#tblCIE10").html("");
         $.each(lDiagnosticoCIE10, function (index, item) {
             var i = index + 1;
-            $("#tblCIE10").append("<tr><th scope='row'>" + i + "</th><td>" + _parseNombreCie10(item.Codigo) + "</td><td>" + item.Descripcion + "</td></tr>");
+            $("#tblCIE10").append("<tr><th scope='row'>" + i + "</th><td>" + item.Codigo + "</td><td>" + item.Descripcion + "</td></tr>");
         });
     };
     var _traerIps = function () {
