@@ -64,4 +64,14 @@ public class RepDocumentos {
         }             
         return list2;
     }
+     public List<Documentos> getValuesIPS(String idIPS) {
+        List<Documentos> list = new ArrayList<Documentos>(Org.values());
+        List<Documentos> list2 = new ArrayList<Documentos>();
+        for(int i = 0;i<list.size();i++){
+            if((list.get(i).getIps_ide().equals(idIPS))&&(list.get(i).getTipoDocumento().equals("SOLAUT"))){
+                list2.add(list.get(i));
+            }
+        }             
+        return list2;
+    }
 }
